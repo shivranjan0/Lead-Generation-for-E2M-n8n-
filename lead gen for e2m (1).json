@@ -1,0 +1,644 @@
+{
+  "name": "lead gen for e2m",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "explore",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Type of business",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Solo Digital Agency Owners"
+                  },
+                  {
+                    "option": "Small-to-Mid-size Digital Agencies"
+                  },
+                  {
+                    "option": "Enterprise-size Digital Agencies"
+                  },
+                  {
+                    "option": "Marketing Agencies"
+                  },
+                  {
+                    "option": "Creative Agencies"
+                  },
+                  {
+                    "option": "Advertising & Branding Agencies"
+                  },
+                  {
+                    "option": "Digital Marketing Consultants"
+                  }
+                ]
+              },
+              "multiselect": true,
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Number of leads",
+              "fieldType": "number",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Location ",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [-704, 768],
+      "id": "8d88d5da-5577-4415-9eb6-23da6bc9f41e",
+      "name": "On form submission",
+      "webhookId": "32cf7d96-9ab4-401d-973e-e225187b2822"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [1008, 640],
+      "id": "0376bbb3-e2f6-4b12-852b-713a093b826c",
+      "name": "Merge",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1KZ8cRihwDX2jb9eHZp97hEH15YW4F6hyRkhjIUqZIv4",
+          "mode": "list",
+          "cachedResultName": "n8n lead gen",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1KZ8cRihwDX2jb9eHZp97hEH15YW4F6hyRkhjIUqZIv4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1667358280,
+          "mode": "list",
+          "cachedResultName": "companies which doesnt have website",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1KZ8cRihwDX2jb9eHZp97hEH15YW4F6hyRkhjIUqZIv4/edit#gid=1667358280"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [16, 1136],
+      "id": "ca1e8e9a-41d9-47d4-b573-a854ddd6eeb9",
+      "name": "companies which dont have a website",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "qVg3x4yBwCIcWJId",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1KZ8cRihwDX2jb9eHZp97hEH15YW4F6hyRkhjIUqZIv4",
+          "mode": "list",
+          "cachedResultName": "n8n lead gen",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1KZ8cRihwDX2jb9eHZp97hEH15YW4F6hyRkhjIUqZIv4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2104036867,
+          "mode": "list",
+          "cachedResultName": "error logs",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1KZ8cRihwDX2jb9eHZp97hEH15YW4F6hyRkhjIUqZIv4/edit#gid=2104036867"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [1056, 1200],
+      "id": "72b2a349-01c3-43d2-b073-1c40710c80f2",
+      "name": "error log",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "qVg3x4yBwCIcWJId",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1KZ8cRihwDX2jb9eHZp97hEH15YW4F6hyRkhjIUqZIv4",
+          "mode": "list",
+          "cachedResultName": "n8n lead gen",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1KZ8cRihwDX2jb9eHZp97hEH15YW4F6hyRkhjIUqZIv4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "leads",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1KZ8cRihwDX2jb9eHZp97hEH15YW4F6hyRkhjIUqZIv4/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "title",
+              "displayName": "title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "address",
+              "displayName": "address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "city",
+              "displayName": "city",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "state",
+              "displayName": "state",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "countryCode",
+              "displayName": "countryCode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "website",
+              "displayName": "website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "phoneUnformatted",
+              "displayName": "phoneUnformatted",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "domain ",
+              "displayName": "domain ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "company_summary",
+              "displayName": "company_summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Pain_Points",
+              "displayName": "Pain_Points",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Recommended_E2M_Solutions_Services",
+              "displayName": "Recommended_E2M_Solutions_Services",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "cold_email_html",
+              "displayName": "cold_email_html",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [1248, 624],
+      "id": "6d5c1909-654a-467f-89b7-5577fef4cdce",
+      "name": "final lead generated",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "qVg3x4yBwCIcWJId",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=You are a senior B2B sales strategist AI. Your role is to analyze a company's website summary, identify key challenges or pain points, recommend relevant E2M Solutions services, write a concise 30-word pitch, and create a personalized cold outreach email in HTML format.\n\nBased on the identified challenges, recommend the most relevant E2M Solutions services to address these challenges. The available services are: Digital Marketing, SEO, Local SEO, eCommerce SEO, PPC, Content Writing, Copywriting, Website Design & Development, WordPress, WP Maintenance & Support, Elementor Development, Oxygen Builder Development, Beaver Builder Development, Gutenberg Development, Duda Development, Webflow Development, GoHighLevel Development, IT & Server Management.\n\nCreate a cold outreach email in HTML format, including subject and body, personalized to the company. The email should focus on the problems E2M Solutions can solve and include a clear call to action.\n\noutput of all these value should be in json format like \n\n{\ntitle:\"{{ $json.title }}\",\ncompany_summary:\"\",Pain_Points:\"\",Recommended_E2M_Solutions_Services:\"\", cold_email_html;,\n}",
+              "role": "system"
+            },
+            {
+              "content": "={{ $json.website }}"
+            }
+          ]
+        },
+        "jsonOutput": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [368, 576],
+      "id": "b26566e5-3a04-48ad-9b28-d85431924a20",
+      "name": "sumarizing website and suggestion services",
+      "credentials": {
+        "openAiApi": {
+          "id": "aiSKUOqyQsqrV9T1",
+          "name": "n8n free OpenAI API credits"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2f99a224-f5a2-43bf-95fe-984b2eb5156c",
+              "name": "domain ",
+              "value": "={{ $json.website.extractDomain() }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "include": "selected",
+        "includeFields": "title, address, city, state, countryCode, website, phoneUnformatted",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [96, 736],
+      "id": "0a676c52-aa4a-412f-ac29-f36c24568d47",
+      "name": "extracting domain",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "198f986c-7ac9-4ee9-b225-849195c15999",
+              "leftValue": "={{ $json.website }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [-208, 752],
+      "id": "5168890d-be94-489c-a091-b08febcdc6b8",
+      "name": "if website exist",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/compass~crawler-google-places/run-sync-get-dataset-items?token=[REDACTED_APIFY_API_TOKEN]",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"includeWebResults\": false,\n  \"language\": \"en\",\n  \"locationQuery\":{{ $json['Location '].toJsonString() }} ,\n  \"maxCrawledPlacesPerSearch\": {{ $json['Number of leads'] }},\n  \"maxImages\": 0,\n  \"maximumLeadsEnrichmentRecords\": 0,\n  \"scrapeContacts\": false,\n  \"scrapeDirectories\": false,\n  \"scrapeImageAuthors\": false,\n  \"scrapePlaceDetailPage\": false,\n  \"scrapeReviewsPersonalData\": true,\n  \"scrapeTableReservationProvider\": false,\n  \"searchStringsArray\": {{ $json[\"Type of business\"].toJsonString() }},\n  \"skipClosedPlaces\": false,\n  \"searchMatching\": \"all\",\n  \"placeMinimumStars\": \"\",\n  \"website\": \"allPlaces\",\n  \"maxQuestions\": 0,\n  \"maxReviews\": 0,\n  \"reviewsSort\": \"newest\",\n  \"reviewsFilterString\": \"\",\n  \"reviewsOrigin\": \"all\",\n  \"allPlacesNoSearchAction\": \"\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [-464, 768],
+      "id": "2a694f1a-c923-4a63-b3f7-96229968b0c6",
+      "name": "apify google map scraper",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "\nconst result = {\n  title: $json?.message?.content?.title,\n  company_summary: $json?.message?.content?.company_summary,\n  Pain_Points: $json?.message?.content?.Pain_Points,\n  Recommended_E2M_Solutions_Services:\n    $json?.message?.content?.Recommended_E2M_Solutions_Services,\n  cold_email_html: $json?.message?.content?.cold_email_html,\n};\n\nreturn result;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [800, 864],
+      "id": "83a93518-37ff-4719-8fe1-4b72bf297fdd",
+      "name": "formation llm result",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "field": "title"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1.1,
+      "position": [1504, 608],
+      "id": "a972ef92-ee3e-452d-a914-6081046d1db7",
+      "name": "total processed lead"
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "field": "title"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1.1,
+      "position": [256, 1152],
+      "id": "189d104f-1f9c-44e6-acee-30434d9eeebb",
+      "name": "total skipped leads"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "apify google map scraper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "final lead generated",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "error log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "final lead generated": {
+      "main": [
+        [
+          {
+            "node": "total processed lead",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "error log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "sumarizing website and suggestion services": {
+      "main": [
+        [
+          {
+            "node": "formation llm result",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "error log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "extracting domain": {
+      "main": [
+        [
+          {
+            "node": "sumarizing website and suggestion services",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "error log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "if website exist": {
+      "main": [
+        [
+          {
+            "node": "extracting domain",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "companies which dont have a website",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "error log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "apify google map scraper": {
+      "main": [
+        [
+          {
+            "node": "if website exist",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "error log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "formation llm result": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ],
+        [
+          {
+            "node": "error log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "companies which dont have a website": {
+      "main": [
+        [
+          {
+            "node": "total skipped leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "error log": {
+      "main": [[]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "9c134f22-b284-41a8-a555-9694dd9536d7",
+  "meta": {
+    "templateId": "self-building-ai-agent",
+    "templateCredsSetupCompleted": true,
+    "instanceId": "da1505cf371a84a2dc55eb37b71ecb840eceeed06b659666c40833ae1579b9e9"
+  },
+  "id": "Vd36cHlAQ4zKS7sL",
+  "tags": []
+}
