@@ -34,22 +34,7 @@ You must configure three main services for the nodes to function correctly.
 #### 🔹 2.1 Google Sheets OAuth2
 
 1. In n8n, go to **Credentials** > **Create New**.
-2. Search for and select **Google Sheets OAuth2**.
-3. Log in with your Google Account and authorize the connection.
-4. **Attach this credential** to the following nodes in the workflow:
-   - `final lead generated`
-   - `companies which dont have a website`
-   - `error log`
 
-#### 🔹 2.2 OpenAI API
-
-1. In n8n, go to **Credentials** > **Create New**.
-2. Search for **OpenAI**.
-3. Paste your **API Key** (starts with `sk-...`).
-4. **Attach this credential** to the node:
-   - `summarizing website and suggestion services`
-
-#### 🔹 2.3 Apify API Token
 # Lead-Generation-for-E2M — n8n Workflow
 
 A concise n8n workflow to find businesses on Google Maps, analyze their websites with AI, generate pain points & recommended services, and draft personalized cold emails.
@@ -132,4 +117,3 @@ PRs welcome — keep secrets out of commits and follow the security notes above.
 ## License
 
 See the repository settings for licensing information.
-
